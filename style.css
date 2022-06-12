@@ -32,6 +32,42 @@ p {
     padding: 10px;
 }
 
+.wallpaper_post {
+    position: relative;
+    display: block;
+}
+
+.wallpaper_hover {
+    background: rgba(0, 0, 0, .4);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    text-align: center;
+}
+
+.wallpaper_post:hover .wallpaper_hover {
+    display: flex;
+}
+
+.wallpaper_button {
+    margin: 0;
+    cursor: pointer;
+    color: lightgray;
+    background: transparent;
+    border: 2px solid lightgray;
+}
+
+.wallpaper_button:hover {
+    background-color: lightgray;
+    color: black;
+}
+
 img {
     margin: 0 auto;
     width: 30vw;

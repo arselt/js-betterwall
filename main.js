@@ -3,11 +3,9 @@ const CORS_FIX = 'https://cors-arselt.herokuapp.com/'
 
 async function fetchWallpapers() {
     const res = await fetch(CORS_FIX + API_URL)
-    const data = await res.json()
+    const data = await res.json();
 
     return data.data
-    // const img = document.querySelector('img');
-    // return img.src = data.data[0].path
 }
 
 const app = document.getElementById('gridApp');
@@ -17,11 +15,24 @@ async function fetchGrid() {
 
     const grid = wallpapers.map(wallpaper => {
         return `
-            <img src=${wallpaper.thumbs.large}>
+            <div class="wallpaper_post">
+                <img src=${wallpaper.thumbs.large}>
+                <span class="wallpaper_hover">
+                    <button
+                        class="wallpaper_button"
+                        onclick="
+                            window.open(
+                                '${wallpaper.short_url}','_blank'
+                            )
+                        "
+                    >
+                        Original post
+                    </Button>
+                </span>
+            </div>
         `
     });
     app.innerHTML = grid.join('');
 }
 
-fetchGrid()
-// fetchWallpaper();
+fetchGrid();
