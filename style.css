@@ -11,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 h1 {
@@ -28,7 +29,7 @@ p {
 .wallpaper_grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(150px, 300px));
-    gap: 20px;
+    gap: 10px;
     padding: 10px;
 }
 
@@ -74,6 +75,8 @@ img {
     height: 30vw;
     max-width: 300px;
     max-height: 300px;
+    min-width: 100px;
+    min-height: 100px;
     object-fit: cover;
 }
 

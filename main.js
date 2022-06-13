@@ -13,7 +13,7 @@ const app = document.getElementById('gridApp');
 async function fetchGrid() {
     const wallpapers = await fetchWallpapers();
 
-    const grid = wallpapers.map(wallpaper => {
+    const grid = wallpapers.slice(0, 9).map(wallpaper => {
         return `
             <div class="wallpaper_post">
                 <img src=${wallpaper.thumbs.large}>
